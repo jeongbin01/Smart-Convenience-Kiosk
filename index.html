@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스마트 편의점 키오스크</title>
+  <meta name="description" content="스마트 편의점 키오스크 웹앱" />
+  <meta name="author" content="Lovable" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>스마트 편의점 키오스크</h1>
+      <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <label class="switch">
+          <input type="checkbox" id="theme-switch">
+          <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon"></i>
+      </div>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="상품명을 입력하세요..." />
+      <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+
+
+    <nav class="categories">
+      <button class="category-btn active" data-category="all">전체</button>
+      <button class="category-btn" data-category="snack">간식</button>
+      <button class="category-btn" data-category="beverage">음료</button>
+      <button class="category-btn" data-category="instant">즉석식</button>
+      <button class="category-btn" data-category="lunchbox">도시락</button>
+      <button class="category-btn" data-category="daily">생활용품</button>
+    </nav>
+
+    <main>
+      <div class="products-grid" id="products-container">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </main>
+
+    <div class="cart-button" id="cart-btn">
+      <span class="cart-count" id="cart-count">0</span>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Product Template -->
+  <template id="product-template">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="" alt="">
+        <span class="inventory"></span>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name"></h3>
+        <div class="product-details">
+          <span class="product-price"></span>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="JS/products.js"></script>
+  <script src="JS/cart.js"></script>
+  <script src="JS/app.js"></script>
+</body>
+
+</html>
