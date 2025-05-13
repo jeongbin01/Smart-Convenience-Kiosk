@@ -28,7 +28,7 @@ const products = [
     id: "4",
     name: "바나나우유",
     price: 1500,
-    category: "beverage",
+    category: "dairy",
     inventory: 12,
     image: "img/바나나우유.png"
   },
@@ -36,7 +36,7 @@ const products = [
     id: "5",
     name: "초코에몽",
     price: 1300,
-    category: "beverage",
+    category: "dairy",
     inventory: 8,
     image: "img/초코에몽.png"
   },
@@ -44,7 +44,7 @@ const products = [
     id: "6",
     name: "불닭볶음면",
     price: 2500,
-    category: "instant",
+    category: "processed",
     inventory: 15,
     image: "img/불닭볶음면.png"
   },
@@ -52,7 +52,7 @@ const products = [
     id: "7",
     name: "치킨마요덮밥",
     price: 4500,
-    category: "instant",
+    category: "processed",
     inventory: 5,
     image: "img/치킨마요덮밥.png"
   },
@@ -60,7 +60,7 @@ const products = [
     id: "8",
     name: "치킨몬스터 도시락",
     price: 6000,
-    category: "lunchbox",
+    category: "processed",
     inventory: 3,
     image: "img/치킨몬스터 도시락.png"
   },
@@ -68,7 +68,7 @@ const products = [
     id: "9",
     name: "김치",
     price: 3500,
-    category: "lunchbox",
+    category: "agricultural",
     inventory: 7,
     image: "img/김치.png"
   },
@@ -84,7 +84,7 @@ const products = [
     id: "11",
     name: "메로나",
     price: 1200,
-    category: "snack",
+    category: "dairy",
     inventory: 18,
     image: "img/메로나.png"
   },
@@ -116,7 +116,7 @@ const products = [
     id: "15",
     name: "샴푸",
     price: 8000,
-    category: "daily",
+    category: "living",
     inventory: 6,
     image: "img/샴푸.png"
   },
@@ -124,7 +124,7 @@ const products = [
     id: "16",
     name: "치약",
     price: 4000,
-    category: "daily",
+    category: "living",
     inventory: 12,
     image: "img/치약.png"
   }
@@ -134,11 +134,16 @@ const products = [
 // 카테고리 목록
 const categories = [
   { id: "all", name: "전체" },
-  { id: "snack", name: "간식" },
   { id: "beverage", name: "음료" },
-  { id: "instant", name: "즉석식" },
-  { id: "lunchbox", name: "도시락" },
-  { id: "daily", name: "생활용품" }
+  { id: "snack", name: "제과" },
+  { id: "dairy", name: "유제품" },
+  { id: "sauce", name: "소스&조미료" },
+  { id: "agricultural", name: "농수축산물" },
+  { id: "processed", name: "가공기타" },
+  { id: "living", name: "생활용품" },
+  { id: "electronics", name: "가전/문⦁완구" },
+  { id: "fashion", name: "의류⦁잡화⦁테넌트" },
+  { id: "pet", name: "반려동물용품" }
 ];
 
 // 로컬 스토리지에서 상품 정보 불러오기 또는 초기 상태 저장
