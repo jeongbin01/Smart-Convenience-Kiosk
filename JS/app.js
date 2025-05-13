@@ -1,4 +1,3 @@
-
 // DOM이 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
   // 테마 설정
@@ -66,6 +65,66 @@ function setupEventListeners() {
       window.location.href = 'checkout.html';
     });
   }
+  
+  // 검색 기능 구현
+  const searchInput = document.getElementById('search-input');
+  const searchBtn = document.getElementById('search-btn');
+  
+  if (searchInput && searchBtn) {
+    // 검색 버튼 클릭 이벤트
+    searchBtn.addEventListener('click', function() {
+      searchProducts(searchInput.value);
+    });
+    
+    // 엔터 키 이벤트
+    searchInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        searchProducts(searchInput.value);
+      }
+    });
+  }
+}
+
+// 상품 검색 기능
+function searchProducts(query) {
+  if (!query.trim()) {
+    renderProducts('all');
+    return;
+  }
+  
+  const productsContainer = document.getElementById('products-container');
+  const products = getProducts();
+  const normalizedQuery = query.trim().toLowerCase();
+  
+  // 검색어와 일치하는 상품 필터링
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(normalizedQuery) ||
+    product.category.toLowerCase().includes(normalizedQuery)
+  );
+  
+  // 컨테이너 비우기
+  productsContainer.innerHTML = '';
+  
+  // 검색 결과가 없으면 메시지 표시
+  if (filteredProducts.length === 0) {
+    productsContainer.innerHTML = `
+      <div class="no-products">
+        <p>검색 결과가 없습니다.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  // 검색 결과 표시
+  filteredProducts.forEach(product => {
+    const productElement = createProductCard(product);
+    productsContainer.appendChild(productElement);
+  });
+  
+  // 카테고리 버튼 활성화 해제
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
 }
 
 // 상품 목록 표시
