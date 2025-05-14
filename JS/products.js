@@ -245,17 +245,17 @@ const products = [
 
 // 카테고리 목록
 const categories = [
-  { id: "all", name: "All" },
-  { id: "beverage", name: "Beverages" },
-  { id: "snack", name: "Snacks" },
-  { id: "dairy", name: "Dairy" },
-  { id: "sauce", name: "Sauces & Seasonings" },
-  { id: "agricultural", name: "Agricultural Products" },
-  { id: "processed", name: "Processed Foods" },
-  { id: "living", name: "Living Supplies" },
-  { id: "electronics", name: "Electronics & Toys" },
-  { id: "fashion", name: "Fashion & Accessories" },
-  { id: "pet", name: "Pet Supplies" }
+  { id: "all", name: "전체" },
+  { id: "beverage", name: "음료" },
+  { id: "snack", name: "간식" },
+  { id: "dairy", name: "유제품" },
+  { id: "sauce", name: "소스/조미료" },
+  { id: "agricultural", name: "농산물" },
+  { id: "processed", name: "가공식품" },
+  { id: "living", name: "생활용품" },
+  { id: "electronics", name: "전자/완구" },
+  { id: "fashion", name: "패션/잡화" },
+  { id: "pet", name: "반려동물용품" }
 ];
 
 // 로컬 스토리지에서 상품 정보 불러오기 또는 초기 상태 저장
@@ -273,7 +273,6 @@ function initializeProducts() {
 }
 
 // 상품 정보 저장하기
-// Saves the provided list of products to local storage.
 function saveProducts(products) {
   localStorage.setItem('products', JSON.stringify(products));
 }
@@ -292,7 +291,6 @@ function updateProductInventory(productId, newInventory) {
     }
     return product;
   });
-  );
   
   saveProducts(updatedProducts);
   return updatedProducts;
@@ -302,6 +300,12 @@ function updateProductInventory(productId, newInventory) {
 function getProducts() {
   const savedProducts = localStorage.getItem('products');
   if (!savedProducts) {
+    return initializeProducts();
+  }
+  return JSON.parse(savedProducts);
+}
+
+// 상품 하나 가져오기
 function getProduct(productId) {
   const product = getProducts().find(product => product.id === productId);
   if (!product) {
@@ -309,16 +313,7 @@ function getProduct(productId) {
   }
   return product;
 }
-  return JSON.parse(savedProducts);
-}
 
-// 상품 하나 가져오기
-// 페이지 로드 시 상품 초기화
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('products')) {
-    initializeProducts();
-  }
-});
 // 페이지 로드 시 상품 초기화
 document.addEventListener('DOMContentLoaded', () => {
   initializeProducts();
