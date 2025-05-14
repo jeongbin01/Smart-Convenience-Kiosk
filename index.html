@@ -30,19 +30,20 @@
       <button id="search-btn"><i class="fas fa-search"></i></button>
     </div>
 
-
-<button class="category-btn active" data-category="all">전체</button>
-<button class="category-btn" data-category="meal">간편 식사</button>
-<button class="category-btn" data-category="snack">과자</button>
-<button class="category-btn" data-category="icecream">아이스크림</button>
-<button class="category-btn" data-category="beverage">음료</button>
-<button class="category-btn" data-category="household">생활용품</button>
-    </nav>
+    <div class="category-container">
+      <button class="category-btn active" data-category="all">전체</button>
+      <button class="category-btn" data-category="meal">간편식사</button>
+      <button class="category-btn" data-category="cooked">즉석조리</button>
+      <button class="category-btn" data-category="snack">과자류</button>
+      <button class="category-btn" data-category="icecream">아이스크림</button>
+      <button class="category-btn" data-category="food">식품</button>
+      <button class="category-btn" data-category="beverage">음료</button>
+      <button class="category-btn" data-category="household">생활용품</button>
+    </div>
 
     <main>
-      <div class="products-grid" id="products-container">
-        <!-- 상품이 동적으로 여기에 표시됩니다 -->
-      </div>
+      <div id="products" class="products-grid"></div>
+      <!-- 상품이 동적으로 여기에 표시됩니다 -->
     </main>
 
     <div class="cart-button" id="cart-btn">

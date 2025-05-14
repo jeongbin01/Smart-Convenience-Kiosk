@@ -1,11 +1,11 @@
 const products = [
   {
-    id: "12",
-    name: "삼다수",
-    price: 1000,
-    category: "beverage",
+    id: "1",
+    name: "더 건강닭가슴스리라차차",
+    price: 3900,
+    category: "",
     inventory: 24,
-    image: "https://msave.emart24.co.kr/cmsbo/upload/nHq/plu_image/500x500/8808244201045.JPG"
+    image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895795204.jpg"
   }
 
 ];
@@ -13,12 +13,14 @@ const products = [
 
 // 카테고리 목록
 const categories = [
-  { id: "all", name: "전체" },
-  { id: "meal", name: "간편 식사" },
-  { id: "snack", name: "과자" },
+  { id: "all",      name: "전체"     },
+  { id: "meal",     name: "간편식사" },
+  { id: "cooked",   name: "즉석조리" },
+  { id: "snack",    name: "과자류"   },
   { id: "icecream", name: "아이스크림" },
-  { id: "beverage", name: "음료" },
-  { id: "household", name: "생활용품" }
+  { id: "food",     name: "식품"     },
+  { id: "beverage", name: "음료"     },
+  { id: "household",name: "생활용품" },
 ];
 
 // 로컬 스토리지에서 상품 정보 불러오기 또는 초기 상태 저장
