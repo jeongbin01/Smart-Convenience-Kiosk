@@ -130,11 +130,11 @@ const products = [
   },
   {
     id: "17",
-    name: "2%",
+    name: "이프로로",
     price: 1800,
     category: "beverage",
     inventory: 9,
-    image: "img/2%.png"
+    image: "img/이프로.png"
   },
   {
     id: "18",
