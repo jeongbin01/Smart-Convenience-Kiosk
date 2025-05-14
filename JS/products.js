@@ -1,4 +1,3 @@
-// 상품 데이터
 const products = [
   {
     id: "1",
@@ -6,7 +5,7 @@ const products = [
     price: 1500,
     category: "snack",
     inventory: 15,
-    image: "img/초코파이.png"
+    image: "img/choco_pie.png"
   },
   {
     id: "2",
@@ -14,7 +13,7 @@ const products = [
     price: 1800,
     category: "snack",
     inventory: 10,
-    image: "img/포카칩.png"
+    image: "img/pocachip.png"
   },
   {
     id: "3",
@@ -22,7 +21,7 @@ const products = [
     price: 2000,
     category: "beverage",
     inventory: 20,
-    image: "img/콜라.png"
+    image: "img/cola.png"
   },
   {
     id: "4",
@@ -30,7 +29,7 @@ const products = [
     price: 1500,
     category: "dairy",
     inventory: 12,
-    image: "img/바나나우유.png"
+    image: "img/banana_milk.png"
   },
   {
     id: "5",
@@ -38,7 +37,7 @@ const products = [
     price: 1300,
     category: "dairy",
     inventory: 8,
-    image: "img/초코에몽.png"
+    image: "img/choco_emong.png"
   },
   {
     id: "6",
@@ -46,7 +45,7 @@ const products = [
     price: 2500,
     category: "processed",
     inventory: 15,
-    image: "img/불닭볶음면.png"
+    image: "img/buldak_noodle.png"
   },
   {
     id: "7",
@@ -54,7 +53,7 @@ const products = [
     price: 4500,
     category: "processed",
     inventory: 5,
-    image: "img/치킨마요덮밥.png"
+    image: "img/chicken_mayo_rice.png"
   },
   {
     id: "8",
@@ -62,7 +61,7 @@ const products = [
     price: 6000,
     category: "processed",
     inventory: 3,
-    image: "img/치킨몬스터 도시락.png"
+    image: "img/chicken_monster_lunchbox.png"
   },
   {
     id: "9",
@@ -70,7 +69,7 @@ const products = [
     price: 3500,
     category: "agricultural",
     inventory: 7,
-    image: "img/김치.png"
+    image: "img/kimchi.png"
   },
   {
     id: "10",
@@ -78,7 +77,7 @@ const products = [
     price: 3200,
     category: "snack",
     inventory: 6,
-    image: "img/딸기 샌드위치.png"
+    image: "img/strawberry_sandwich.png"
   },
   {
     id: "11",
@@ -86,7 +85,7 @@ const products = [
     price: 1200,
     category: "dairy",
     inventory: 18,
-    image: "img/메로나.png"
+    image: "img/melona.png"
   },
   {
     id: "12",
@@ -94,7 +93,7 @@ const products = [
     price: 1000,
     category: "beverage",
     inventory: 24,
-    image: "img/삼다수.png"
+    image: "img/samdasu.png"
   },
   {
     id: "13",
@@ -102,7 +101,7 @@ const products = [
     price: 2800,
     category: "beverage",
     inventory: 9,
-    image: "img/스타벅스_에스프레소_크림.png"
+    image: "img/starbucks_espresso_cream.png"
   },
   {
     id: "14",
@@ -110,7 +109,7 @@ const products = [
     price: 4500,
     category: "snack",
     inventory: 4,
-    image: "img/밤_티라미수_컵.png"
+    image: "img/chestnut_tiramisu_cup.png"
   },
   {
     id: "15",
@@ -118,7 +117,7 @@ const products = [
     price: 8000,
     category: "living",
     inventory: 6,
-    image: "img/샴푸.png"
+    image: "img/shampoo.png"
   },
   {
     id: "16",
@@ -126,15 +125,15 @@ const products = [
     price: 4000,
     category: "living",
     inventory: 12,
-    image: "img/치약.png"
+    image: "img/toothpaste.png"
   },
   {
     id: "17",
-    name: "이프로로",
+    name: "이프로",
     price: 1800,
     category: "beverage",
     inventory: 9,
-    image: "img/이프로.png"
+    image: "img/2pro.png"
   },
   {
     id: "18",
@@ -142,15 +141,15 @@ const products = [
     price: 1600,
     category: "beverage",
     inventory: 13,
-    image: "img/딸기_우유.png"
+    image: "img/strawberry_milk.png"
   },
   {
     id: "19",
-    name: "밀크티티",
+    name: "밀크티",
     price: 2500,
     category: "beverage",
     inventory: 8,
-    image: "img/밀크티.png"
+    image: "img/milk_tea.png"
   },
   {
     id: "20",
@@ -158,7 +157,7 @@ const products = [
     price: 1200,
     category: "beverage",
     inventory: 18,
-    image: "img/비타500.png"
+    image: "img/vita500.png"
   },
   {
     id: "21",
@@ -166,7 +165,7 @@ const products = [
     price: 1700,
     category: "beverage",
     inventory: 14,
-    image: "img/사이다.png"
+    image: "img/cider.png"
   },
   {
     id: "22",
@@ -174,7 +173,7 @@ const products = [
     price: 3300,
     category: "beverage",
     inventory: 7,
-    image: "img/스타벅스_프라푸치노.png"
+    image: "img/starbucks_frappuccino.png"
   },
   {
     id: "23",
@@ -182,7 +181,7 @@ const products = [
     price: 500,
     category: "beverage",
     inventory: 20,
-    image: "img/얼음컵.png"
+    image: "img/ice_cup.png"
   },
   {
     id: "24",
@@ -190,7 +189,7 @@ const products = [
     price: 2000,
     category: "beverage",
     inventory: 10,
-    image: "img/카페라떼.png"
+    image: "img/cafe_latte.png"
   },
   {
     id: "25",
@@ -198,7 +197,7 @@ const products = [
     price: 1600,
     category: "beverage",
     inventory: 11,
-    image: "img/케토레이.png"
+    image: "img/pocari_sweat.png"
   },
   {
     id: "26",
@@ -206,7 +205,7 @@ const products = [
     price: 1800,
     category: "beverage",
     inventory: 6,
-    image: "img/토레타.png"
+    image: "img/toreta.png"
   },
   {
     id: "27",
@@ -214,7 +213,7 @@ const products = [
     price: 1700,
     category: "beverage",
     inventory: 12,
-    image: "img/트로피카나_스파클링_청포도.png"
+    image: "img/tropicana_sparkling_grape.png"
   },
   {
     id: "28",
@@ -222,7 +221,7 @@ const products = [
     price: 1700,
     category: "beverage",
     inventory: 15,
-    image: "img/트로피카나_오렌지.png"
+    image: "img/tropicana_orange.png"
   },
   {
     id: "29",
@@ -230,7 +229,7 @@ const products = [
     price: 1600,
     category: "beverage",
     inventory: 19,
-    image: "img/파워에이드.png"
+    image: "img/powerade.png"
   },
   {
     id: "30",
@@ -238,7 +237,7 @@ const products = [
     price: 1500,
     category: "beverage",
     inventory: 13,
-    image: "img/핫식스.png"
+    image: "img/hotsix.png"
   }
 ];
 
