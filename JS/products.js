@@ -102,7 +102,7 @@ const products = [
     price: 2800,
     category: "beverage",
     inventory: 9,
-    image: "img/스타벅스_에소프레소_크림.png"
+    image: "img/스타벅스_에스프레소_크림.png"
   },
   {
     id: "14",
@@ -127,23 +127,135 @@ const products = [
     category: "living",
     inventory: 12,
     image: "img/치약.png"
+  },
+  {
+    id: "17",
+    name: "2%",
+    price: 1800,
+    category: "beverage",
+    inventory: 9,
+    image: "img/2%.png"
+  },
+  {
+    id: "18",
+    name: "딸기 우유",
+    price: 1600,
+    category: "beverage",
+    inventory: 13,
+    image: "img/딸기_우유.png"
+  },
+  {
+    id: "19",
+    name: "밀크티티",
+    price: 2500,
+    category: "beverage",
+    inventory: 8,
+    image: "img/밀크티.png"
+  },
+  {
+    id: "20",
+    name: "비타500",
+    price: 1200,
+    category: "beverage",
+    inventory: 18,
+    image: "img/비타500.png"
+  },
+  {
+    id: "21",
+    name: "사이다",
+    price: 1700,
+    category: "beverage",
+    inventory: 14,
+    image: "img/사이다.png"
+  },
+  {
+    id: "22",
+    name: "스타벅스 프라푸치노",
+    price: 3300,
+    category: "beverage",
+    inventory: 7,
+    image: "img/스타벅스_프라푸치노.png"
+  },
+  {
+    id: "23",
+    name: "얼음컵",
+    price: 500,
+    category: "beverage",
+    inventory: 20,
+    image: "img/얼음컵.png"
+  },
+  {
+    id: "24",
+    name: "카페라떼",
+    price: 2000,
+    category: "beverage",
+    inventory: 10,
+    image: "img/카페라떼.png"
+  },
+  {
+    id: "25",
+    name: "케토레이",
+    price: 1600,
+    category: "beverage",
+    inventory: 11,
+    image: "img/케토레이.png"
+  },
+  {
+    id: "26",
+    name: "토레타",
+    price: 1800,
+    category: "beverage",
+    inventory: 6,
+    image: "img/토레타.png"
+  },
+  {
+    id: "27",
+    name: "트로피카나 스파클링 청포도",
+    price: 1700,
+    category: "beverage",
+    inventory: 12,
+    image: "img/트로피카나_스파클링_청포도.png"
+  },
+  {
+    id: "28",
+    name: "트로피카나 오렌지",
+    price: 1700,
+    category: "beverage",
+    inventory: 15,
+    image: "img/트로피카나_오렌지.png"
+  },
+  {
+    id: "29",
+    name: "파워에이드",
+    price: 1600,
+    category: "beverage",
+    inventory: 19,
+    image: "img/파워에이드.png"
+  },
+  {
+    id: "30",
+    name: "핫식스",
+    price: 1500,
+    category: "beverage",
+    inventory: 13,
+    image: "img/핫식스.png"
   }
 ];
 
 
 // 카테고리 목록
 const categories = [
-  { id: "all", name: "전체" },
-  { id: "beverage", name: "음료" },
-  { id: "snack", name: "제과" },
-  { id: "dairy", name: "유제품" },
-  { id: "sauce", name: "소스&조미료" },
-  { id: "agricultural", name: "농수축산물" },
-  { id: "processed", name: "가공기타" },
-  { id: "living", name: "생활용품" },
-  { id: "electronics", name: "가전/문⦁완구" },
-  { id: "fashion", name: "의류⦁잡화⦁테넌트" },
-  { id: "pet", name: "반려동물용품" }
+  { id: "all", name: "All" },
+  { id: "beverage", name: "Beverages" },
+  { id: "snack", name: "Snacks" },
+  { id: "dairy", name: "Dairy" },
+  { id: "sauce", name: "Sauces & Seasonings" },
+  { id: "agricultural", name: "Agricultural Products" },
+  { id: "processed", name: "Processed Foods" },
+  { id: "living", name: "Living Supplies" },
+  { id: "electronics", name: "Electronics & Toys" },
+  { id: "fashion", name: "Fashion & Accessories" },
+  { id: "pet", name: "Pet Supplies" }
 ];
 
 // 로컬 스토리지에서 상품 정보 불러오기 또는 초기 상태 저장
@@ -161,16 +273,25 @@ function initializeProducts() {
 }
 
 // 상품 정보 저장하기
+// Saves the provided list of products to local storage.
 function saveProducts(products) {
   localStorage.setItem('products', JSON.stringify(products));
 }
 
 // 상품 재고 업데이트
 function updateProductInventory(productId, newInventory) {
-  const updatedProducts = getProducts().map(product => 
-    product.id === productId 
-      ? { ...product, inventory: newInventory } 
-      : product
+  const products = getProducts();
+  
+  if (!products) {
+    console.error('Failed to retrieve products. Cannot update inventory.');
+    return null;
+  }
+  const updatedProducts = products.map(product => {
+    if (product.id === productId) {
+      return { ...product, inventory: newInventory };
+    }
+    return product;
+  });
   );
   
   saveProducts(updatedProducts);
@@ -181,17 +302,23 @@ function updateProductInventory(productId, newInventory) {
 function getProducts() {
   const savedProducts = localStorage.getItem('products');
   if (!savedProducts) {
-    // 저장된 상품이 없으면 초기화하고 반환
-    return initializeProducts();
+function getProduct(productId) {
+  const product = getProducts().find(product => product.id === productId);
+  if (!product) {
+    throw new Error(`Product with ID ${productId} not found.`);
   }
+  return product;
+}
   return JSON.parse(savedProducts);
 }
 
 // 상품 하나 가져오기
-function getProduct(productId) {
-  return getProducts().find(product => product.id === productId);
-}
-
+// 페이지 로드 시 상품 초기화
+document.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('products')) {
+    initializeProducts();
+  }
+});
 // 페이지 로드 시 상품 초기화
 document.addEventListener('DOMContentLoaded', () => {
   initializeProducts();
