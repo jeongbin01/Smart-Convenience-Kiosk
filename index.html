@@ -7,6 +7,7 @@
   <title>스마트 편의점 키오스크</title>
   <meta name="description" content="스마트 편의점 키오스크 웹앱" />
   <meta name="author" content="Lovable" />
+  <!-- CSS 파일 경로가 index.html과 같은 폴더에 있다고 가정 -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -25,11 +26,13 @@
       </div>
     </header>
 
+    <!-- 검색 바 -->
     <div class="search-bar">
       <input type="text" id="search-input" placeholder="상품명을 입력하세요..." />
       <button id="search-btn"><i class="fas fa-search"></i></button>
     </div>
 
+    <!-- 카테고리 버튼: 클래스 이름과 닫힘 태그 꼭 확인 -->
     <div class="category-container">
       <button class="category-btn active" data-category="all">전체</button>
       <button class="category-btn" data-category="meal">간편식사</button>
@@ -41,24 +44,26 @@
       <button class="category-btn" data-category="household">생활용품</button>
     </div>
 
+    <!-- 상품 그리드 -->
     <main>
       <div id="products" class="products-grid"></div>
-      <!-- 상품이 동적으로 여기에 표시됩니다 -->
     </main>
 
+    <!-- 장바구니 버튼 -->
     <div class="cart-button" id="cart-btn">
       <span class="cart-count" id="cart-count">0</span>
       <i class="fas fa-shopping-cart"></i>
     </div>
   </div>
 
+  <!-- 토스트 알림 -->
   <div class="toast" id="toast"></div>
 
   <!-- 상품 템플릿 -->
   <template id="product-template">
     <div class="product-card">
       <div class="product-image">
-        <img src="" alt="">
+        <img src="" alt="상품 이미지">
         <span class="inventory"></span>
       </div>
       <div class="product-info">
@@ -71,6 +76,7 @@
     </div>
   </template>
 
+  <!-- JS -->
   <script src="JS/products.js"></script>
   <script src="JS/cart.js"></script>
   <script src="JS/app.js"></script>

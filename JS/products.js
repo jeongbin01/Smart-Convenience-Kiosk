@@ -3,24 +3,47 @@ const products = [
     id: "1",
     name: "더 건강닭가슴스리라차차",
     price: 3900,
-    category: "",
+    category: "meal",
     inventory: 24,
     image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895795204.jpg"
+  },
+  {
+    id: "2",
+    name: "군구마단호박샐러드",
+    price: 5900,
+    category: "meal",
+    inventory: 24,
+    image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809679629152.jpg"
+  },
+  {
+    id: "3",
+    name: "케이준치킨샐러드",
+    price: 5400,
+    category: "meal",
+    inventory: 24,
+    image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809679629145.jpg"
+  },
+  {
+    id: "4",
+    name: "직화그릴스크램블버거",
+    price: 3900,
+    category: "meal",
+    inventory: 24,
+    image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068932683.jpg"
   }
 
 ];
 
-
 // 카테고리 목록
 const categories = [
-  { id: "all",      name: "전체"     },
-  { id: "meal",     name: "간편식사" },
-  { id: "cooked",   name: "즉석조리" },
-  { id: "snack",    name: "과자류"   },
+  { id: "all", name: "전체" },
+  { id: "meal", name: "간편식사" },
+  { id: "cooked", name: "즉석조리" },
+  { id: "snack", name: "과자류" },
   { id: "icecream", name: "아이스크림" },
-  { id: "food",     name: "식품"     },
-  { id: "beverage", name: "음료"     },
-  { id: "household",name: "생활용품" },
+  { id: "food", name: "식품" },
+  { id: "beverage", name: "음료" },
+  { id: "household", name: "생활용품" },
 ];
 
 // 로컬 스토리지에서 상품 정보 불러오기 또는 초기 상태 저장
