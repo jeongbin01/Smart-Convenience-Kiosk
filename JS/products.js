@@ -30,8 +30,104 @@ const products = [
     category: "meal",
     inventory: 24,
     image: "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068932683.jpg"
+  },
+  // 다른 카테고리 상품 추가
+  {
+    id: "5",
+    name: "김치볶음라면",
+    price: 1500,
+    category: "cooked",
+    inventory: 15,
+    image: "https://via.placeholder.com/300x300?text=김치볶음라면"
+  },
+  {
+    id: "6", 
+    name: "튀김우동",
+    price: 2500,
+    category: "cooked",
+    inventory: 10,
+    image: "https://via.placeholder.com/300x300?text=튀김우동"
+  },
+  {
+    id: "7",
+    name: "꼬북칩 초코츄러스맛",
+    price: 1600,
+    category: "snack",
+    inventory: 30,
+    image: "https://via.placeholder.com/300x300?text=꼬북칩초코츄러스맛"
+  },
+  {
+    id: "8",
+    name: "농심 포테토칩",
+    price: 1500,
+    category: "snack",
+    inventory: 25,
+    image: "https://via.placeholder.com/300x300?text=농심포테토칩"
+  },
+  {
+    id: "9",
+    name: "구구콘",
+    price: 1800,
+    category: "icecream",
+    inventory: 12,
+    image: "https://via.placeholder.com/300x300?text=구구콘"
+  },
+  {
+    id: "10",
+    name: "월드콘",
+    price: 2000,
+    category: "icecream",
+    inventory: 18,
+    image: "https://via.placeholder.com/300x300?text=월드콘"
+  },
+  {
+    id: "11",
+    name: "햇반",
+    price: 1800,
+    category: "food",
+    inventory: 20,
+    image: "https://via.placeholder.com/300x300?text=햇반"
+  },
+  {
+    id: "12",
+    name: "야채참치",
+    price: 2400,
+    category: "food",
+    inventory: 15,
+    image: "https://via.placeholder.com/300x300?text=야채참치"
+  },
+  {
+    id: "13",
+    name: "코카콜라",
+    price: 1500,
+    category: "beverage",
+    inventory: 30,
+    image: "https://via.placeholder.com/300x300?text=코카콜라"
+  },
+  {
+    id: "14",
+    name: "칠성사이다",
+    price: 1500,
+    category: "beverage",
+    inventory: 28,
+    image: "https://via.placeholder.com/300x300?text=칠성사이다"
+  },
+  {
+    id: "15",
+    name: "물티슈",
+    price: 1200,
+    category: "household",
+    inventory: 22,
+    image: "https://via.placeholder.com/300x300?text=물티슈"
+  },
+  {
+    id: "16",
+    name: "휴지",
+    price: 2500,
+    category: "household",
+    inventory: 15,
+    image: "https://via.placeholder.com/300x300?text=휴지"
   }
-
 ];
 
 // 카테고리 목록
@@ -73,6 +169,7 @@ function updateProductInventory(productId, newInventory) {
     console.error('Failed to retrieve products. Cannot update inventory.');
     return null;
   }
+  
   const updatedProducts = products.map(product => {
     if (product.id === productId) {
       return { ...product, inventory: newInventory };
@@ -86,20 +183,30 @@ function updateProductInventory(productId, newInventory) {
 
 // 상품 정보 가져오기
 function getProducts() {
-  const savedProducts = localStorage.getItem('products');
-  if (!savedProducts) {
+  try {
+    const savedProducts = localStorage.getItem('products');
+    if (!savedProducts) {
+      return initializeProducts();
+    }
+    return JSON.parse(savedProducts);
+  } catch (error) {
+    console.error('Error loading products:', error);
     return initializeProducts();
   }
-  return JSON.parse(savedProducts);
 }
 
 // 상품 하나 가져오기
 function getProduct(productId) {
-  const product = getProducts().find(product => product.id === productId);
-  if (!product) {
-    throw new Error(`Product with ID ${productId} not found.`);
+  try {
+    const product = getProducts().find(product => product.id === productId);
+    if (!product) {
+      throw new Error(`Product with ID ${productId} not found.`);
+    }
+    return product;
+  } catch (error) {
+    console.error(`Error getting product ${productId}:`, error);
+    throw error;
   }
-  return product;
 }
 
 // 페이지 로드 시 상품 초기화
