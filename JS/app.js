@@ -1,5 +1,5 @@
 // DOM이 로드된 후 실행
-document.a3ddEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   initTheme();
   initCategories();
   renderProducts('all');
